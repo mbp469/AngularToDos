@@ -1,0 +1,12 @@
+<div class="new-woof">
+    <form novalidate name="newWoofForm" class="new-woof__form" ng-submit="newCtlr.create(newWoofForm.woofText.$viewValue)">
+        <div>
+            <span class="new-woof__count">
+              {{ newWoofForm.woofText.$viewValue.length || 0 }}
+      </span> / {{ newCtlr.maxTextLength }}
+        </div>
+        <textarea name="woofText" class="new-woof__text" placeholder="Send a woof" ng-model="woofText" ng-required="true">
+    </textarea>
+        <button class="new-woof__submit">send</button>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Woof</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+    <link rel="stylesheet" href="./src/styles/list.css" />
+    <link rel="stylesheet" href="./src/styles/new.css" />
+</head>
+
+<body ng-app="testApp">
+  <div ng-controller="TestController as test">
+  {{ test.logMessage('test message') }}
+</div>
+
+
+    <script src="./node_modules/angular/angular.js"></script>
+    <!-- <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="./node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script> -->
+    <script src="./src/js/test-app.js"></script>
+    <script src="./src/js/logFactory.js"></script>
+</body>
+
+</html>
