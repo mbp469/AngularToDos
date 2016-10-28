@@ -1,18 +1,18 @@
-angular.module('woofApp', ['ui.router','LocalStorageModule'])
+angular.module('AngularToDos', ['ui.router','LocalStorageModule'])
   .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
-    $stateProvider.state('woofParent', {
+    $stateProvider.state('todoParent', {
       url: '/',
       abstract: true,
       template: '<ui-view></ui-view>'
-    }).state('woofParent.new', {
+    }).state('todoParent.new', {
       url: 'new',
       templateUrl: 'src/templates/new.html',
-      controller: 'NewWoofController as newCtlr'
-    }).state('woofParent.list', {
+      controller: 'NewTodoCtlr as newCtlr'
+    }).state('toDoParent.list', {
       url: 'list',
       templateUrl: 'src/templates/list.html',
-      controller: 'ListWoofsController as list'
+      controller: 'ListTodosCtlr as list'
     });
   });

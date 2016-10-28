@@ -1,12 +1,12 @@
-<div class="new-woof">
-    <form novalidate name="newWoofForm" class="new-woof__form" ng-submit="newCtlr.create(newWoofForm.woofText.$viewValue)">
-        <div>
+<div class="new-todo">
+    <form novalidate name="newTodoForm" class="new-todo__form" ng-submit="newCtlr.create(newTodoForm.todoText.$viewValue)">
+        <!-- <div>
             <span class="new-woof__count">
               {{ newWoofForm.woofText.$viewValue.length || 0 }}
       </span> / {{ newCtlr.maxTextLength }}
-        </div>
-        <textarea name="woofText" class="new-woof__text" placeholder="Send a woof" ng-model="woofText" ng-required="true">
+        </div> -->
+        <textarea name="todoText" class="new-todo__text" placeholder="Type a ToDo." ng-model="todoText" ng-required="true">
     </textarea>
-        <button class="new-woof__submit">send</button>
+        <button class="new-todo__submit">send</button>
     </form>
 </div>

@@ -4,13 +4,18 @@
     <ul class="filter__list">
       <li
           class="filter__list-item"
-          ng-class="{'filter__list-item--active': woofFilter === 'all'}">
-        <a>all</a>
+          ng-class="{'filter__list-item--active': list.listFilter === 'all'}">
+        <a ui-sref='todoParent.list({ filter: "all" })'>all</a>
       </li>
       <li
           class="filter__list-item"
-          ng-class="{'filter__list-item--active': woofFilter === 'starred'}">
-        <a>starred</a>
+          ng-class="{'filter__list-item--active': list.listFilter === 'starred'}">
+        <a ui-sref='todoParent.list({ filter: "complete" })'>complete</a>
+      </li>
+      <li
+          class="filter__list-item"
+          ng-class="{'filter__list-item--active': list.listFilter === 'starred'}">
+        <a ui-sref='todoParent.list({ filter: "incomplete" })'>incomplete</a>
       </li>
     </ul>
   </div>
@@ -18,21 +23,16 @@
   <ul class="cards">
     <li
         class="card"
-        ng-repeat="woof in list.listWoofsArray">
+        ng-repeat="todo in list.listTodosArray | filter: list.filtersObj[list.listFilter] | orderBy: '-'">
       <div class="card__left">
-        <div class="card__text">{{woof.body}}</div>
+        <div class="card__text">{{todo.body}}</div>
 
-        <div class="card__star-count">
-          <ng-pluralize count="woof.starCount"
-             when="{'0': '0 stars',
-                    'one': '1 star',
-                    'other': '{} stars'}">
-        </div>
       </div>
       <div class="card__right">
         <div
             class="card__star"
-            ng-class="{'card__star--active': woof.starred}" />
+            ng-class="{'card__complete--active': todo.complete}"
+            ng-click="list.toggle(todo)" />
       </div>
     </li>
   </ul>

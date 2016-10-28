@@ -1,30 +1,34 @@
 <!doctype html>
-<html lang="en" ng-app="woofApp">
+<html lang="en" ng-app="AngularToDos">
 
 <head>
-    <title>Woof</title>
+    <title>AngularToDos</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css" />
     <link rel="stylesheet" href="./src/styles/main.css" />
-    <link rel="stylesheet" href="./src/styles/list.css" />
-    <link rel="stylesheet" href="./src/styles/new.css" />
 </head>
 
-<body>
+<body ng-cloak>
     <div class="container">
-        <h1 class="title">Woof</h1>
+        <h1 class="title">Angular Todos</h1>
     </div>
 
     <nav class="nav">
         <div class="container">
             <ul class="nav__list">
                 <li class="nav__list-item">
-                    <a ui-sref="woofParent.new">New Woof</a>
+                    <a ui-sref="todoParent.new">New ToDo</a>
                 </li>
                 <li class="nav__list-item">
-                    <a ui-sref="woofParent.list">All Woofs</a>
+                    <a ui-sref="todoParent.list">All ToDos</a>
+                </li>
+                <li class="nav__list-item">
+                    <a ui-sref="todoParent.list">Completed ToDos</a>
+                </li>
+                <li class="nav__list-item">
+                    <a ui-sref="todoParent.list">Incomplete ToDos</a>
                 </li>
             </ul>
         </div>
@@ -38,8 +42,9 @@
     <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="./node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
     <script src="./app.js"></script>
-    <script src="./src/js/controllers/new-woof.controller.js"></script>
-    <script src="./src/js/controllers/woofs.controller.js"></script>
+    <script src="./src/js/controllers/new-todo.controller.js"></script>
+    <script src="./src/js/controllers/todos-list.controller.js"></script>
+    <script src="./src/js/services/todos.service.js"></script>
 </body>
 
 </html>
