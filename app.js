@@ -10,7 +10,7 @@ angular.module('AngularToDos', ['ui.router','LocalStorageModule'])
       url: 'new',
       templateUrl: 'src/templates/new.html',
       controller: 'NewTodoCtlr as newCtlr'
-    }).state('toDoParent.list', {
+    }).state('todoParent.list', {
       url: 'list',
       templateUrl: 'src/templates/list.html',
       controller: 'ListTodosCtlr as list'
