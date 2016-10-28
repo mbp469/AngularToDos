@@ -1,6 +1,6 @@
 <div>
   <div class="filter">
-    <h3 class="filter__title">show:</h3>
+    <h3 class="filter__title">ToDos:</h3>
     <ul class="filter__list">
       <li
           class="filter__list-item"
@@ -26,6 +26,7 @@
         ng-repeat="todo in list.listTodosArray | filter: list.filtersObj[list.listFilter] | orderBy: '-'">
       <div class="card__left">
         <div class="card__text">{{todo.body}}</div>
+        <div class="checkmark-div" ng-click="list.toggle(todo)" ng-class="{'card__complete--true': todo.complete}">checkmark</div>
 
       </div>
       <div class="card__right">
