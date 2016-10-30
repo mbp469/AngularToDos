@@ -34,11 +34,6 @@
         <button ng-show="editing" type="submit">Submit Changes</button>
       </form>
       <div class="card__right">
-        <div
-            class="card__star"
-            ng-class="{'card__complete--active': todo.complete}"
-            ng-click="list.toggle(todo)" />
-      </div>
     </li>
     <div class="incomplete-count">{{list.incompleteTodosCount}}/{{list.total}} todos have been completed.</div>
     <button class="clear-completed" ng-click="list.clear()">Clear Completed Todos</button>

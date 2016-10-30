@@ -14,14 +14,14 @@ angular.module('AngularToDos')
   this.incompleteTodosCount = getIncompleteCount(this.listTodosArray);
 
   function getIncompleteCount(array) {
-    var incomplete = 0;
+    var complete = 0;
     for (var i = 0; i < array.length; i++){
-      if(!array[i].complete){
-        incomplete ++;
+      if(array[i].complete){
+        complete ++;
       }
     }
-    console.log(incomplete);
-    return incomplete;
+    console.log('complete: ' + complete);
+    return complete;
   }
   this.toggle = function(index, todoObj){
     storageService.toggle(index, todoObj);
@@ -29,7 +29,6 @@ angular.module('AngularToDos')
 
   }
   this.delete = function(index, todoObj){
-    console.log('delete');
     storageService.delete(index, todoObj);
     $state.reload();
   }

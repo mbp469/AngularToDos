@@ -27,8 +27,6 @@ angular.module('AngularToDos').service('storageService', function(localStorageSe
 
     function deleteTodo(index, todoObj){
       var allTodosArray = getAllTodos();
-
-      // todoToDelete.deleted = true;
       allTodosArray.splice(allTodosArray.length - index - 1, 1);
       setAllTodos(allTodosArray);
 

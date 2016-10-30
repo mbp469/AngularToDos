@@ -7,7 +7,7 @@ angular.module('AngularToDos').controller('NewTodoCtlr', function($state, storag
       id: new Date(),
       body: todoText,
       complete: false,
-      deleted: false
+      // deleted: false
     });
     storageService.set(this.allTodosArray);
     $state.go('todoParent.list');
