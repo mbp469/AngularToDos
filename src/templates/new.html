@@ -1,4 +1,4 @@
-<div class="new-todo">
+<div class="new-todo" ng-cloak>
     <form novalidate name="newTodoForm" class="new-todo__form" ng-submit="newCtlr.create(newTodoForm.todoText.$viewValue)">
         <textarea name="todoText" class="new-todo__text" placeholder="Type a ToDo." ng-model="todoText" ng-required="true">
     </textarea>

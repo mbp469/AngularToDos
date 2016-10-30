@@ -1,4 +1,4 @@
-<div>
+<div ng-cloak>
   <div class="filter">
     <h3 class="filter__title">ToDos:</h3>
     <ul class="filter__list">
@@ -40,5 +40,7 @@
             ng-click="list.toggle(todo)" />
       </div>
     </li>
+    <div class="incomplete-count">{{list.incompleteTodosCount}}/{{list.total}} todos have been completed.</div>
+    <button class="clear-completed" ng-click="list.clear()">Clear Completed Todos</button>
   </ul>
 </div>

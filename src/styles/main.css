@@ -16,6 +16,24 @@ a {
   color: black; }
   a:visited {
     color: black; }
+  a:active {
+    text-decoration: underline; }
+
+button {
+  box-shadow: 1px 2px 3px black; }
+
+textarea {
+  overflow: auto;
+  height: 36vh;
+  width: 55vw;
+  text-align: center;
+  margin: 5% 0 1%; }
+
+.new-todo__submit {
+  display: block;
+  margin: 0 auto;
+  height: 35px;
+  width: 100px; }
 
 .nav {
   background: lightblue;
@@ -25,13 +43,15 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-around; }
-    .nav .nav__list .nav__list-item {
-      background: steelblue;
-      width: 15%;
-      border: 5px solid white;
-      height: 50px; }
-      .nav .nav__list .nav__list-item div {
-        padding: 5%; }
+    .nav .nav__list .nav__list-item button {
+      width: 18vw;
+      height: 12vh; }
+      .nav .nav__list .nav__list-item button:hover {
+        background: lightblue; }
+      .nav .nav__list .nav__list-item button a {
+        color: black; }
+        .nav .nav__list .nav__list-item button a:active, .nav .nav__list .nav__list-item button a:hover {
+          text-decoration: underline; }
 
 .container {
   text-align: center; }
@@ -44,12 +64,21 @@ ul.cards {
   display: flex;
   flex-direction: column;
   align-items: center; }
+  ul.cards li:hover .delete-div {
+    opacity: 1; }
 
 .filter__list {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin: 4% 0; }
+  .filter__list .filter__list-item {
+    padding: 1% 2%; }
+    .filter__list .filter__list-item:hover {
+      background: lightblue; }
+
+.filter__list-item--active a {
+  border-bottom: 1px solid steelblue; }
 
 .deleted {
   display: none; }
@@ -77,10 +106,21 @@ ul.cards {
       color: red;
       right: 3%;
       top: 8%;
-      cursor: pointer; }
+      cursor: pointer;
+      opacity: 0; }
 
 .card__complete--true {
   text-decoration: line-through;
   color: grey; }
+
+.incomplete-count {
+  align-self: flex-start;
+  margin: 2% 2% 2% 8%; }
+
+.clear-completed {
+  align-self: flex-end;
+  margin: -4% 8% 0 0;
+  height: 2em;
+  padding: 1%; }
 
 /*# sourceMappingURL=main.css.map */

@@ -20,6 +20,29 @@ a {
     &:visited {
         color: black;
     }
+
+    &:active {
+        text-decoration: underline;
+    }
+}
+
+button {
+    box-shadow: 1px 2px 3px black;
+}
+
+textarea {
+    overflow: auto;
+    height: 36vh;
+    width: 55vw;
+    text-align: center;
+    margin: 5% 0 1%;
+}
+
+.new-todo__submit {
+    display: block;
+    margin: 0 auto;
+    height: 35px;
+    width: 100px;
 }
 
 .nav {
@@ -33,13 +56,21 @@ a {
         justify-content: space-around;
 
         .nav__list-item {
-            background: steelblue;
-            width: 15%;
-            border: 5px solid white;
-            height: 50px;
+            button {
+                width: 18vw;
+                height: 12vh;
+                &:hover {
+                  background: lightblue;
 
-            div {
-                padding: 5%;
+                }
+                a {
+                    color: black;
+
+                    &:active,
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
         }
     }
@@ -58,6 +89,12 @@ ul.cards {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    li {
+        &:hover .delete-div {
+            opacity: 1;
+        }
+    }
 }
 
 .filter__list {
@@ -65,10 +102,24 @@ ul.cards {
     flex-direction: row;
     justify-content: space-around;
     margin: 4% 0;
+    .filter__list-item {
+      padding: 1% 2%;
+      &:hover {
+        background: lightblue;
+      }
+    }
 }
+
+.filter__list-item--active {
+    a {
+        border-bottom: 1px solid steelblue;
+    }
+}
+
 .deleted {
-  display: none;
+    display: none;
 }
+
 .card {
     position: relative;
     width: 85%;
@@ -84,15 +135,15 @@ ul.cards {
             top: 28%;
             cursor: pointer;
             height: 1em;
+
             img {
-              height: 1em;
+                height: 1em;
             }
+
             .card__complete--true {
                 text-decoration: line-through;
             }
         }
-
-        .card__text {}
 
         .delete-div {
             height: 1em;
@@ -101,6 +152,7 @@ ul.cards {
             right: 3%;
             top: 8%;
             cursor: pointer;
+            opacity: 0;
         }
     }
 }
@@ -108,4 +160,16 @@ ul.cards {
 .card__complete--true {
     text-decoration: line-through;
     color: grey;
+}
+
+.incomplete-count {
+    align-self: flex-start;
+    margin: 2% 2% 2% 8%;
+}
+
+.clear-completed {
+    align-self: flex-end;
+    margin: -4% 8% 0 0;
+    height: 2em;
+    padding: 1%;
 }
