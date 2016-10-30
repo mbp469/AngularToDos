@@ -103,9 +103,8 @@ ul.cards {
     .card .card__item .delete-div {
       height: 1em;
       position: absolute;
-      color: red;
       right: 3%;
-      top: 8%;
+      top: 24%;
       cursor: pointer;
       opacity: 0; }
 
