@@ -20,15 +20,16 @@
     </ul>
   </div>
 
-  <ul class="cards">
+  <ul class="cards" >
     <li
-        class="card"
-        ng-repeat="todo in list.listTodosArray | filter: list.filtersObj[list.listFilter] | orderBy: '-'">
-      <div class="card__left">
-        <div class="card__text">{{todo.body}}</div>
-        <div class="checkmark-div" ng-click="list.toggle(todo)" ng-class="{'card__complete--true': todo.complete}">checkmark</div>
-
-      </div>
+        class="card" ng-repeat="todo in list.listTodosArray | filter: list.filtersObj[list.listFilter] | orderBy: '-'">
+      <form class="card__item" ng-submit="list.save($index,todo)">
+        <input class="checkmark-div" type="checkbox" ng-click="list.toggle(todo)" ng-class="{'card__complete--true': todo.complete}"/>
+        <label class="card__text" ng-click="editing=true" ng-hide="editing" ng-class="{'card__complete--true': todo.complete}">{{todo.body}}</label>
+        <input class="card__text" ng-click="edit" ng-show="editing" placeholder="{{todo.body}}" ng-blur="editing=false" ng-model="todo.body" ng-class="{'card__complete--true': todo.complete}"></input>
+        <div class="delete-div" ng-click="list.delete($index,todo); todo.deleted=true;" ng-hide="deleted" >X</div>
+        <button ng-show="editing" type="submit">Submit Changes</button>
+      </form>
       <div class="card__right">
         <div
             class="card__star"

@@ -1,8 +1,107 @@
 * {
-  box-sizing: border-box;
-  list-style: none;
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0 1%;
+    padding: 0;
+    font-family: fantasy;
 }
+
+h1 {
+    font-size: 2em;
+    padding: 0.67em 0;
+    background: steelblue;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+    &:visited {
+        color: black;
+    }
+}
+
+.nav {
+    background: lightblue;
+    height: 50px;
+    box-shadow: 0 4px 7px black;
+
+    .nav__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .nav__list-item {
+            background: steelblue;
+            width: 15%;
+            border: 5px solid white;
+            height: 50px;
+
+            div {
+                padding: 5%;
+            }
+        }
+    }
+}
+
+.container {
+    text-align: center;
+}
+
+h3 {
+    margin: 4% 0;
+    font-size: 1.5em;
+}
+
+ul.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 4% 0;
+}
+.deleted {
+  display: none;
+}
+.card {
+    position: relative;
+    width: 85%;
+    margin: 0;
+
+    .card__item {
+        line-height: 2em;
+        border: 1px solid gray;
+
+        .checkmark-div {
+            position: absolute;
+            left: 4%;
+            top: 28%;
+            cursor: pointer;
+
+            .card__complete--true {
+                text-decoration: line-through;
+            }
+        }
+
+        .card__text {}
+
+        .delete-div {
+            position: absolute;
+            color: red;
+            right: 3%;
+            top: 8%;
+            cursor: pointer;
+        }
+    }
+}
+
 .card__complete--true {
-  text-decoration: line-through;
-  color: grey;
+    text-decoration: line-through;
+    color: grey;
 }
