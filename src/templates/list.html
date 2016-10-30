@@ -9,12 +9,12 @@
       </li>
       <li
           class="filter__list-item"
-          ng-class="{'filter__list-item--active': list.listFilter === 'starred'}">
+          ng-class="{'filter__list-item--active': list.listFilter === 'complete'}">
         <a ui-sref='todoParent.list({ filter: "complete" })'>complete</a>
       </li>
       <li
           class="filter__list-item"
-          ng-class="{'filter__list-item--active': list.listFilter === 'starred'}">
+          ng-class="{'filter__list-item--active': list.listFilter === 'incomplete'}">
         <a ui-sref='todoParent.list({ filter: "incomplete" })'>incomplete</a>
       </li>
     </ul>

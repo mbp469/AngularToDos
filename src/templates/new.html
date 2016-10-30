@@ -1,10 +1,5 @@
 <div class="new-todo">
     <form novalidate name="newTodoForm" class="new-todo__form" ng-submit="newCtlr.create(newTodoForm.todoText.$viewValue)">
-        <!-- <div>
-            <span class="new-woof__count">
-              {{ newWoofForm.woofText.$viewValue.length || 0 }}
-      </span> / {{ newCtlr.maxTextLength }}
-        </div> -->
         <textarea name="todoText" class="new-todo__text" placeholder="Type a ToDo." ng-model="todoText" ng-required="true">
     </textarea>
         <button class="new-todo__submit">Save ToDo</button>

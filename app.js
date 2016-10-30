@@ -11,7 +11,7 @@ angular.module('AngularToDos', ['ui.router','LocalStorageModule'])
       templateUrl: 'src/templates/new.html',
       controller: 'NewTodoCtlr as newCtlr'
     }).state('todoParent.list', {
-      url: 'list',
+      url: 'list?filter',
       templateUrl: 'src/templates/list.html',
       controller: 'ListTodosCtlr as list'
     });
