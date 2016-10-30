@@ -65,10 +65,14 @@ ul.cards {
       position: absolute;
       left: 4%;
       top: 28%;
-      cursor: pointer; }
+      cursor: pointer;
+      height: 1em; }
+      .card .card__item .checkmark-div img {
+        height: 1em; }
       .card .card__item .checkmark-div .card__complete--true {
         text-decoration: line-through; }
     .card .card__item .delete-div {
+      height: 1em;
       position: absolute;
       color: red;
       right: 3%;

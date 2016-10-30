@@ -24,10 +24,13 @@
     <li
         class="card" ng-repeat="todo in list.listTodosArray | filter: list.filtersObj[list.listFilter] | orderBy: '-'">
       <form class="card__item" ng-submit="list.save($index,todo)">
-        <input class="checkmark-div" type="checkbox" ng-click="list.toggle(todo)" ng-class="{'card__complete--true': todo.complete}"/>
+        <div class="checkmark-div" ng-click="list.toggle($index, todo)" ng-model="todo.complete" ng-class="{'card__complete--true': todo.complete}">
+          <img src="src/styles/images/unchecked.png" class="unchecked"  ng-hide="todo.complete"/>
+          <img src="src/styles/images/checked.png" class="checked" ng-show="todo.complete"/>
+        </div>
         <label class="card__text" ng-click="editing=true" ng-hide="editing" ng-class="{'card__complete--true': todo.complete}">{{todo.body}}</label>
         <input class="card__text" ng-click="edit" ng-show="editing" placeholder="{{todo.body}}" ng-blur="editing=false" ng-model="todo.body" ng-class="{'card__complete--true': todo.complete}"></input>
-        <div class="delete-div" ng-click="list.delete($index,todo); todo.deleted=true;" ng-hide="deleted" >X</div>
+        <img src="src/styles/images/DeleteRed.png" class="delete-div" ng-click="list.delete($index,todo); todo.deleted=true;" ng-hide="deleted">
         <button ng-show="editing" type="submit">Submit Changes</button>
       </form>
       <div class="card__right">
